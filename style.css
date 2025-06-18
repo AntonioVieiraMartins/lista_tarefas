@@ -112,7 +112,7 @@ li button:hover {
     flex-direction: column;
   }
 
-  button {
+  button#inserir {
     width: 100%;
   }
 }
