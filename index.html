@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minhas Tarefas</title>
+
+  <!-- Ícone do app -->
+  <link rel="icon" href="icon.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Tema para barra de status no mobile -->
+  <meta name="theme-color" content="#0077cc" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📋 Minhas Tarefas</h1>
+    <div class="input-area">
+      <input type="text" id="novaTarefa" placeholder="Digite uma nova tarefa" />
+      <button onclick="adicionarTarefa()">Adicionar</button>
+    </div>
+    <ul id="listaTarefas"></ul>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+  <script>
+    // Registra o service worker para ativar o PWA
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log("✅ Service Worker registrado com sucesso"))
+        .catch(err => console.error("❌ Erro ao registrar Service Worker:", err));
+    }
+  </script>
+</body>
+</html>
